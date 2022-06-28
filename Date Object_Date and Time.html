@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Object: Date & Time In JavaScript</title>
+</head>
+<body>
+    <h2>Date Object: Date & Time In JavaScript</h2>
+    <h3>Open console for show output of code</h3>
+</body>
+<script>
+    let date = new Date();
+    console.log(date)
+
+    let dummyDate = new Date('07-20-1999');  // yaha starting me month dalke fir date add kare
+    console.log(dummyDate)
+
+    let dummyDate2 = new Date('07-20-1999 04:54:08');  // time add krne ke liye
+    console.log(dummyDate2)
+
+    let dummyDate3 = new Date('octombre 28 1999'); // another way for adding dummy date
+    console.log(dummyDate3)
+
+    let dummyDate4 = new Date('07/20/1999'); // another way for adding dummy date
+    console.log(dummyDate3)
+
+    // for resiving only those u want in date and time :
+    console.log(date.getDay())  // monday se start kr ke kitne no ka day hai wo show kr dega
+    console.log(date.getDate())  // date milege
+    console.log(date.getMonth())  // month meliga
+    console.log(date.getFullYear()) // year
+    console.log(date.getHours()) //  hours meliga
+    console.log(date.getMinutes())  // min meliga
+
+    // set date and time in perticular date :
+    console.log(dummyDate.setDate(28))  // dumy date mai 20 date hai uski jaga 28 kr de
+    console.log(dummyDate)
+      
+    console.log(dummyDate.setHours(3))  //  hourse ko add krne ke liye
+    console.log(dummyDate)
+
+</script>
+</html>

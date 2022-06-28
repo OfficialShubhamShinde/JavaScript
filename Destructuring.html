@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Destructuring in JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h2>Destructuring in JS</h2>
+        </center>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+// Integears Destructuring: 
+    let a, b;
+    [a, b] = [34, 35];
+    console.log(a, b);  //  it is write aise bhi kr sakte hai
+ 
+    [a,b,c, ...d] = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+    console.log(a);  // a ko ayega 1
+    console.log(b);  // b ko ayega 2
+    console.log(c);  // c ko ayega 3
+    console.log(d);  //  ... hai to baki ke sare d me ayege in form of array.
+
+// Array's Destructuring:
+    ({a, b, c}  = {a:20, b: 28, c:23})
+    console.log(a); //  sabko wo values milege
+    console.log(b); //  sabko wo values milege
+    console.log(c); //  sabko wo values milege
+
+    ({a, b, c,...d} = {a:20, b: 28, c:23, d:43, e:24, f:67, g:54})
+    console.log(a,b,c,d)  // apni apni value milege baiki ka d mai array mai store hoga.
+
+    const fruits = ['apple', 'mango', 'banana'];
+    [a,b,c] = fruits
+    console.log(a,b,c) // aise bhi apni apni values de sakte hai 
+
+// Object Destructuring: 
+    let obj = {
+        name: 'Shubham',
+        age: 23,
+        sername: 'Shinde',
+        starts : ()=> {
+            console.log('Started')
+        }
+    }
+    const{name, age, sername, starts} = obj
+    console.log(name, age, sername, starts)
+
+    starts();  //  calling function
+</script>
+
+</html> 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops in js</title>
+  </head>
+  <body>
+    <h2>Topic: Loops</h2>
+    <h3>Open console for show Output of code</h3>
+  </body>
+  <script>
+    // for loop
+    for (let i = 0; i < 10; i++) {
+      console.log(i);
+    }
+
+    
+    // while loop
+    let j = 0;
+    while (j < 10) {
+      console.log(j);
+      j++;
+      if (j === 5) {
+        break; // condition dali agar 5 value ayegi to break krna
+      }
+    }
+
+
+    // dowhile loop
+    let k = 0;
+    do {
+      console.log(k);
+      k++;
+    } while (k < 10);
+
+
+    // foreach
+    let arr = [1, 2, 3, 4, 5];
+    arr.forEach(function func(e,index,Array) {  // khup sare argument pass kr sakte hai
+      console.log(e);
+      console.log(e, index, Array);
+    });
+
+
+    // Object me se sara data print krne ke liye loop
+    let obj = {
+      name: 'shubham',
+      sername : 'shinde',
+      dateofbirth: '20-07-199'
+    }
+    for (let key in obj) {  // TODO: obj me se keys ko show krne ke liye
+      console.log(obj[key]);
+    }
+  </script>
+</html>

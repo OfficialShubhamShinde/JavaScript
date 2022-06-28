@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Regular Expressions - Character sets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h2>Regular Expressions - Character sets</h2>
+        </center>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    // 1) /[]/  
+let reg1 = /s[a-z]ubham/;  //  ---> can be a se z tak konsa bhi
+let reg2 = /s[shub]ubham/;  //  ---> can be s h u b 
+let str1 = "shubham";
+if (reg1.exec(str1)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+
+    // 2) /^[]/  ---> Not in []
+let reg3 = /shu[^b]ham/;  //  ---> ^ iske bad wala word string me nahi hona chaiye
+let reg4 = /shu[^b]ha[^a]m/;  //  ---> multiple 
+let str3 = "shubham";  //  not Match hoga
+if (reg3.exec(str3)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+
+    // 3) /[a-zA-Z]/  
+let reg5 = /shu[a-zA-Z]ham/;  //  ---> capital ya small aa jaye
+let str5 = "shuBham";  //  B capital hai expression mai dono hai konsa bhi chalega
+if (reg5.exec(str5)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+
+    // 4) /[a-zA-Z0-9]/
+let reg6 = /shu[a-zA-Z0-9]ham/;  //  ---> numbers bhi chalenge
+let str6 = "shu5ham";  //  5 number hai expression mai number hai to chalega
+if (reg6.exec(str6)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+
+// Quantifiers:
+    // 1)  Specify quantity of any character 
+let reg7 = /shubham{2}/;  //  ---> {2}  iske andar wale numbers ke characters hone chaiye
+let reg8 = /shubham{2,3}/;  //  ---> {2,3}  2 se 3 ke bich me
+let str7 = "shubhamm";  //  m 2 bar hai to match
+if (reg7.exec(str7)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+
+// Grouping: 
+    // 1) We use paranthesis for grouping ()
+let reg9 = /(shu){2}/;  //  2 bar () is me se ane chaiye
+let reg10 = /(shu){2}([0-9])m/;  // Adding more 
+let str9 = "shushu"; 
+if (reg9.exec(str9)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+</script>
+
+</html>

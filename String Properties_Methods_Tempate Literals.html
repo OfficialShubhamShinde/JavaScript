@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic: STRING Properties_Methods_Tempate Literals </title>
+</head>
+<body>
+    <h2>Topic: STRING Properties_Methods_Tempate</h2>
+    <h2>Open Console for Output of code</h2>
+    <p id="para"></p>
+</body>
+<script>
+    // Concate Way 1 
+    let html1 = '<h1>I am Heading</h1> <p>I am para</p>';
+    console.log(html1); 
+    // Concate way 2
+    let html2 = '<h2>I am another Heading</h2>' + '<p>I am another para</p>'
+    console.log(html2);
+    // Har bar + lagane ke jaga hum concat ka use kr sakte hai :
+    html2 = html2.concat('this', html1)  // concate function
+    console.log(html2);
+
+    let str = 'Shubham ';
+    let str2 = 'Shinde'
+    console.log(str + str2);  // concatinate
+
+
+    console.log(str.length) // Length kitne hai characters kite hai wo output dega
+
+    console.log(str.toUpperCase())  // sare Capital ho jayege
+
+    console.log(str.toLowerCase())  // sare smal latters ho jayege
+
+    console.log(str[1])  // 0 se start hote hai 
+
+    console.log(str.indexOf('u'))  // kitne number pe hai wo nahi higa to -1 dekhayega, our yr 1 wali endex dega
+
+    console.log(str.lastIndexOf('h'))  // last se index batayega 
+
+    console.log(str.charAt(1)) // kitne number ka character chaiye wo dekhayega.
+
+    console.log(str.endsWith(' '))  // jis se end hota hai wo right hoga to true wrna false
+
+    console.log(str.includes('u'))  // kay ye apke string me hai to true wrna false.
+
+    console.log(str.substring(0,3));  // 0 se 3 tak ke character dega.
+
+    console.log(str.slice(-4))  // last se characterd dega
+    console.log(str.slice(0,2))  // start se bhi dega
+
+    console.log(str.split('h'))  // tod dega spacing me jidhar () is me jo word hoga waha
+
+    console.log(str.replace('S', 'K'));  // s ke jaga k ko rerplace kr deya
+
+// Template Literals:
+    let name = 'x';
+    let fruit1 = 'Mango';
+    let fruit2 = 'Apple';
+
+    let html = `hey ${name} you like ${fruit1} and ${fruit2}`;
+    document.getElementById('para').innerHTML= html;
+</script>
+</html>

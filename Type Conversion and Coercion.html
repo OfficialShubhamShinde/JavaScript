@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Conversion and Coercion</title>
+</head>
+<body>
+    <h2>Topic: Type Conversion and Coercion</h2>
+    <h3>Open console for showing output of code</h3>
+</body>
+<script>
+// Conversion:
+
+    // String 
+    let num = String(20);  // it is a number converted into string
+    console.log(num, (typeof num));
+
+    let booleanVar = String(true);  // boolean ko string kr deya
+    console.log(booleanVar)
+
+    let date = String(new Date());  // Date ko bhi string me convert kr deya
+    console.log(date, (typeof date));
+
+    let arr = String([1,2,3,4,5]);  // Array ko bhi string me convert kiya
+    console.log(arr, (typeof arr))
+    // Another way
+    let i = 0;
+    console.log(i.toString());
+
+    let bool = true;
+    console.log(bool.toString());
+
+    let todayDate = String(new Date());
+    console.log(todayDate.toString());
+
+    let arr2 = [1,2,3,4,5];
+    console.log(arr2.toString());
+
+
+    // Number 
+    let num1 = '20';  // it is String
+    let num2 = Number('20');  // Converted into number
+    console.log(num2);
+
+    let num4 = Number('20shu1999');  // ye number nahi yai is liyr NaN output melega (Not a Number)
+    console.log(num4);
+
+    let arry = Number([1,2,3,4,5]);  // Array hoga to bhi NaN melega
+    console.log(arry);
+
+    let num5 = Number(true)  // true hai to 1 false hai to 0.
+    console.log(num5);
+    // Another Way 
+    let num6 = parseFloat('23.1018');
+    console.log(num6.toFixed(5)); // toFix() mejitna number likhogr utne . ke age numbers melege 
+
+
+    // parseInt 
+    let num7 = parseInt('20');  // Number me convert ho jayega
+    console.log(num7);  
+
+
+
+    // parseFloat
+    let num8 = parseFloat('20.28')
+    console.log(num8);
+    
+// Coercion:
+
+    let int1 = 20;
+    let int2 = Number('28');
+    console.log(int1 + int2);
+</script>
+</html>

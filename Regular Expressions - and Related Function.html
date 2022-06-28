@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Regular Expressions and Related Function</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h2>Regular Expressions and Related Function</h2>
+        </center>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    /*What is regular expression:
+        1) apko koyi bhi word search kr ke chaiye to wo ap regular expression ki help ki madat se kr sakte hai.
+        2) // is ke bich me regular expression likha jata hai
+     */
+
+   let reg = /shubham/;  //  method for writing regular expression
+   console.log(reg);
+   console.log(reg.source);  // kay search krna hai
+
+
+    // Function to match Regular Expression: 
+
+        // 1) exec() - this function will return an array for match or null for no match
+                // a) /str/
+    let reg2 = /shubham/g;  //  g means global
+    let str1 = 'This is a shubham and he is great. shubham also handsome'
+    let result1 = reg2.exec(str1);  //  reg-kay search krna hai, exec()-function hai, (str)-jo string mai se search krna hai
+    console.log(result1);
+                // b) /str/g 
+    let result2 = reg2.exec(str1);
+    console.log(result2)
+                // c) /str/i
+    let reg3 = /shubham/i;  //  i means caseInsensitive
+    let str2 = 'I am ShuBham shinde'  // Shubham ka S capital bhi higa but apne search mai small diya hoga lakin i ka use kiya higa to error nahi hai
+    let result3 = reg3.exec(str2);
+    console.log(result3)
+    console.log(result3.input)  //  wo string milege
+    console.log(result3.index)  // kitne no pr hai
+
+        // 2) test() - return true or false
+    let reg4 = /shubham/  //  ye string mai hoga to true wrna false
+    let str3  = 'Is a shubham in string' 
+    let result4 = reg4.test(str3)
+    console.log(result4)
+
+        // 3)  match()  - result array dega warna null (ise ulta lagate hai)
+    let reg5 = /shubham/;
+    let str4 = 'I am shubham. and bro name is also shubham'
+    let result5 = str4.match(reg5) //  ye ulta lega baki ke mutable
+    console.log(result5)
+
+        // 4) search() -  reture index of first match else -1
+    let reg6 = /shubham/;
+    let str5 = 'i am string of shubham';
+    let result6 = str5.search(reg6) // nahi hoga to -1 wrna wo index
+    console.log(result6) //
+
+        // 5) replace()  -  return karega jo return huwa hai wo
+                // a) /str/
+    let reg7 = /rohan/;  //  ise search karo
+    let str6 = 'I am rohan??'  //  isme
+    let result7 = str6.replace(reg7, 'Shubham')  //  rohan ki jaga shubham kr dega
+    console.log(result7) //
+
+
+                // b)  /str/g
+    let reg8 = /rohan/g;  //  add g means globle for aplying all shubham
+    let str7 = 'I am rohan??. my bro name is also rohan.'
+    let result8 = str7.replace(reg8, 'Shubham')
+    console.log(result8)
+</script>
+
+</html>

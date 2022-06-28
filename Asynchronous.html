@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous</title>
+</head>
+
+<body>
+    <h2>Asynchronous</h2>
+    <h3>Open console for show output of code</h3>
+</body>
+
+<script>
+/* Few ways to write asynchronous code in javascript: 
+    1)  Async/await
+    2)  callback
+    3)  promises
+*/
+
+for (let i = 0; i < 45; i++) {
+    const  element = i;
+    console.log('This is index number: ' + i);
+    
+}
+// console.log('Done Printing')  //  45 numbers print hone ke bad ye run hoga but apko ye pahile run honga mangta to:
+
+setTimeout(() => {  //  setTime out function 
+    for (let i = 0; i < 45; i++) {
+    const  element = i;
+    console.log('This is index number: ' + i);
+    
+}
+}, 100);
+console.log('Done Printing')  //  100 msec ke bad ye print hoga baki ka background me run hota rahega
+
+</script>
+
+</html>

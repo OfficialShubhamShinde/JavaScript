@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Prototype</title>
+</head>
+
+<body>
+    <h2>Object Prototype</h2>
+    <h3>Open console for show output of code</h3>
+</body>
+
+<script>
+    // Object: 
+    let obj = {
+        name: 'Shubham',
+        sername: 'Shinder',
+        RollNo: 140
+    }
+    console.log(obj) 
+
+    /* Prototype:  
+    1)  ye run krne ke bad niche prototype ka option ayega. iska matlak aone kasa se start kiya aisa hota hai. Usme bahot sare meathods hote hai prototype me.
+    2)  her ek function object her ka  ek prototype hota hai, Wo alag alag ata hai.
+    3)  Object ke prototype ko change nahi kr sakte.
+    4)  Constuctor ke prototype ko change kr sakte hai.
+    5)  Khud ka object banake usko change krna inbuilt (object) ko target kr kr usko change mat krna
+    */
+
+    // creating cunstructor:
+    function obj2(name, sername) {
+        this.name = 'Rohan',
+        this.sername = 'Shinde'
+    }
+    obj3 = new obj2();
+    console.log(obj3)
+
+    // Change prototype of constructor:
+    obj2.prototype.name = function () {
+        return this.name;
+    }
+    console.log(obj3.name)  // Changed prototype
+
+    // Another example for change prototype:
+    obj2.prototype.setName = function (newName) {
+        this.name = newName;
+    }
+    console.log(obj3.setName)  // showing in obj2 constructor kr prototype mai
+</script>
+
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Arrow functions</h2>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+</body>
+
+<script>
+// Regular Function Method:
+// Method 1: 
+function func1() {
+    console.log('I am function 1')
+}
+func1();
+
+// Method 2: 
+const func2 = function(){
+    console.log('I am function 2')
+}
+func2()
+
+
+// Arrow Function Method: 
+// Method 1: 
+const func3 = ()=>{console.log('I am function 3')}
+func3();
+
+// Method 2: 
+const func4 = ()=> 'I am function 4';
+console.log(func4())  //  return likhne ki bhi jarurat nahi
+
+// Method 3: 
+const func5 = name => 'My name is ' + name;  //  Without bracket ke use kr sakte hai
+console.log(func5('Shubham')) 
+
+// Method 4 : 
+const func6 = (name, sername) => 'My name is ' + name + ' Sername is ' + sername;
+console.log(func6('Shubham', 'Shinde'))   //  2 arguments hogi to () lagane padenge
+
+// For Object:
+const func7 = ()=> ({name: 'Shubham', sername: 'Shinde'})
+console.log(func7())
+
+
+</script>
+ 
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function in JS</title>
+</head>
+<body>
+    <H2>Topic: Function in JS</H2>
+    <h3>Open console for show output of code</h3>
+</body>
+<script>
+    // Simple example 1 of Fuction 
+     function func(name, sername, value) {  // yaha yalue de ke 
+         console.log('My name is ' + name + ' and sername is ' + sername)  // without backtick se aise likhna padta hai
+         console.log(`My name is ${name} and Sername is ${sername}`)  // backtik lagane se aise likhna padta hai
+     }
+     func('Shubham', 'Shinde')  // yaha add kre kay chaiye func ki value
+
+
+    // Object ke andar function 
+    let obj = {
+        name : 'Shubham',
+        game : function () {
+            return 'PUBG';
+        }
+    }
+    console.log(obj.game());
+
+
+    // foreach me function 
+    let arr = ['Mango', 'Apple', 'Pinapple', 'Banana'];
+    arr.forEach(function fruits(e,index) {
+        console.log(e,index);
+    });
+
+
+
+    // Scope 
+    let i = 20;  // var or let ke liye same property
+    console.log(i);  // iske value {} ke andar nahi consider ki jayegi
+
+    {
+        let i = 28;
+        console.log(i);  // curly bracket ke andar me value ek rahte hai is g global scope
+    } 
+    {
+        console.log(i);  // start wala hoga show
+    }
+
+
+</script>
+</html>

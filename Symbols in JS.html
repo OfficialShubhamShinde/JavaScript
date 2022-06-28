@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Symbols in JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h2>Symbols in JS</h2>
+        </center>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    /* What is Symbol:
+    1) It is Primative
+    2) 
+    
+    */
+
+    // Creating Symbol:
+    const mySymbol = Symbol('My identifier')
+    const mySymbol2 = Symbol('My identifier')
+    console.log(mySymbol === mySymbol2)  /* Ye dono exactly same hai to bhi false kr dega ye hota hai sybol */
+
+    const k1 = Symbol('identifier')  //  Identifying debugging time so write ('')
+    const k2 = Symbol()
+
+    myObj = {};
+    myObj[k1] = 'Shubham';  // Adding keys in Symbol
+    myObj[k2] = 'Rohan';
+    myObj["Name"] = 'Good Boy'  
+
+    console.log(myObj)
+    console.log(myObj[k1])
+    console.log(myObj[k2])   //  Print keys
+    console.log(myObj.k2)  //  ALERT: Aise nahi kr sakte
+
+    // for in loop:
+    for(key in myObj){
+        console.log(key, myObj[key])
+    // Symbol are igore in for in loop
+    }
+
+    // Convrted into Array:
+    console.log(JSON.stringify(myObj));
+</script>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulating Website Using JS Window Object</title>
+  </head>
+  <body>
+    <h2>Topic: Manipulating Website Using JS Window Object</h2>
+    <h3>Open console for show output of code</h3>
+  </body>
+  <script>
+    //   window:
+
+    let win = window; // pure window object ke function dekh jayenge (window is Global Object)
+    console.log(win);
+    // console.log(window.alert("alert")); // aise bhi likh sakhte hai
+    // alert("alert"); // Aise bhi likh sakte hai
+
+    // prompt('What is your name: ')  // input leta hai
+
+    // confirm('Are u confirm')  // pop pu ayega sure ka
+
+    console.log('Inner Height: ' + window.innerHeight)  // Window ki height show kr dega 
+
+    console.log('Inner Width: ' + window.innerWidth)  // Window ki Weidth show kr dega 
+    
+    console.log('outer Height: ' + window.outerHeight)  // Window ki outer Height show kr dega 
+    
+    console.log('outer Weidth: ' + window.outerWidth)  // Window ki outer Weidth show kr dega 
+
+    console.log('scrollY: ' + window.scrollX) // Window ki Horixontal position (apne kitna x axis me scroll kiya hai)
+
+    console.log('scrollY: ' + window.scrollY) // Window ki Vertical position (apne kitna Y axis me scroll kiya hai)
+
+    console.log('Location: '+ window.location)
+
+    // console.log(location.href = '//google.com')  // jo url doge uspr redirect hoga 
+
+    console.log(history);  // pure history dekhege kosa page open kiya
+
+    console.log(history.go(-1));   // piche wale page pe jayega
+
+    console.log(history.go(1));   // age wale page pe jayega
+
+  </script>
+</html>

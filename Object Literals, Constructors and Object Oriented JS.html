@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Literals, Constructors and Object Oriented JavaScript</title>
+</head>
+<body>
+    <h2>Object Literals, Constructors and Object Oriented JavaScript</h2>
+    <h3>Open console for show output of code</h3>
+</body>
+<script>
+    /*  Kisi language ko object oriented hone ke liye us me ye chije hone chaiye: 
+        1) Objects 
+        2) Classes 
+        3) Inheritance
+        4) Incapsulation
+    */
+
+//    Object literal for creating Objects:
+let car = {
+    name: 'Stingray',
+    topSpeed: 180,
+    run: function () {
+        console.log('car is running')
+    }
+}
+console.log(car)  // for running object
+console.log(car.run())  // return kuch nahi krega to undefine ayega likh kr
+
+
+
+// Creating Constructors for Object:
+function generalCar(givenName, givenSpeed) {
+    this.name = givenName;
+    this.speed = givenSpeed;
+    this.carDetail = function(){
+        console.log(`My car name is ${givenName} & topspeed is ${givenSpeed}`)
+    }
+}
+car1 = new generalCar('stingray', 280)
+
+console.log(car1)  //  running given function
+console.log(car1.carDetail())  // for runing function in object
+
+
+</script>
+
+</html>

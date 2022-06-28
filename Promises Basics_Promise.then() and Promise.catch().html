@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promises Basics, Promise.then() & Promise.catch() </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Example 1</h2>
+    <ul id="student">
+
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+</body>
+
+<script>
+  /*Promise:
+      - resolve  - ek to ye hoga
+      - reject   - warna ye hoga
+      - pending 
+  */
+
+  function func1() {
+    return new Promise(function (resolve, reject) {   //  promise ek function leta hai. ek to solve kr dega ya to resolve kr dega
+      setTimeout(() => {
+        const error = true;  //  jo bhi work (200, 300, 401 hai ya nahi )
+        if (!error) {
+          console.log('Your promise has been resolved');
+          resolve();
+        }
+        else {
+          console.log('Your promise has not been rejected');
+          reject('Sorry not fulfilled');
+        }
+      })
+    }, 1000);
+  }
+
+  func1().then(function () {
+    console.log('thanks for resolving')
+  }).catch(function () {
+    console.log('very bad bro')
+  });
+
+
+
+  // converted call back to Promise: 
+  const students = [  // array
+    { name: "harry", subject: "JavaScript" },
+    { name: "Rohan", subject: "Machine Learning" }
+  ]
+
+
+  function enrollStudent(student) {
+    return new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        students.push(student);
+        console.log("Student has been enrolled in callback function");
+        const error2 = false
+        if (!error2) {
+          resolve()
+        }
+        else {
+          reject();
+        }
+        resolve();
+      }, 1000);
+    })
+
+  }
+
+  function getStudents() {
+    setTimeout(function () {
+      let str = "";
+      students.forEach(function (student) {
+        str += `<li> ${student.name}</li>`
+      });
+      document.getElementById('student').innerHTML = str;
+      console.log("Students have been fetched");
+    }, 1000);  // 4 sec ke bad console me show kr dega
+  }
+
+  let newStudent = { name: "Sunny", subject: "Python" }
+  enrollStudent(newStudent).then(function () {
+    getStudents()
+  }).catch(function () {
+    console.log("some error occured")
+  });
+// getStudents(); 
+
+
+
+
+// Quick Quiz:
+function func2() {
+  return new Promise(function (resolve, reject) { 
+    setTimeout(() => {
+      const error3 = true;
+      if (!error3) {
+        console.log("Something missing")
+        reject()
+      }
+      else{
+        console.log("Something Right")
+        resolve()
+      }
+    }, 2000);
+  })
+}
+
+func2().then(function () {
+  console.log("euu")  //  sahi hoga to ye run kr dega
+}).catch(function () {
+  console.log("shett")  //  galat hoga to ye run kr dega
+})
+</script>
+
+</html>

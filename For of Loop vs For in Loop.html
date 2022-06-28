@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>For of Loop vs For in Loop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h2>For of Loop vs For in Loop</h2>
+        </center>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+/*When we use for in loop or foor of loop:
+1) object ke liye for in loop use kare, as well as for of bhi.
+2) string ke liye for of loop use kare.
+3) DOM me se sare a chaiye to for of use kare.
+*/
+
+    // creating array:
+    let array = ['Shubham', 'rohan', 'sakshi', 'savita', 'ashok', 'vijay'];
+
+    /* Old for loop:
+    for (let i = 0; i < array.length; i++) {
+        const elemet = array[i];
+        console.log(elemet);
+    }
+    */
+
+    //for in loop 
+    // creating object: 
+    let obj = {
+        name: 'Shubham',
+        language: 'JavaScript',
+        hobbies: 'Programming'
+    }
+
+    // Itereating an objct:
+
+    /* Traditional for loop ki help se:
+    for (let index = 0; index < Object.keys(obj).length; index++) {
+        const element = obj[Object.keys(obj)[index]];
+        console.log(element);    
+    }
+    */
+
+    // for in loop ke helps se:  
+    for (let key in obj) {
+        console.log(obj[key]);
+    }
+
+    // print string values in for in loop :
+    let str = 'This is string';
+    for (let key in str) {
+        console.log(str[key]);
+    }
+
+    // for of loop 
+    console.log('**********for of loop starts here**********');
+    
+    let array2 = ['x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f'];
+    for (let name of array2) {
+        console.log(name);
+    }
+
+
+
+</script>
+
+</html>

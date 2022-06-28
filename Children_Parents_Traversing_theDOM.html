@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+    crossorigin="anonymous"
+  />
+    <title>Children_Parents_Traversing_theDOM</title>
+</head>
+<body>
+    <h1>Topic: Children_Parents_Traversing_theDOM</h1>
+    <h2>Open Console for Showing Output of code</h2>
+    <div class="container">
+        <h1>Welcome to table</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sr.No</th>
+                    <th>Name</th>
+                    <th>Sername</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Shubham</td>
+                    <td>Shinde</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Sakshi</td>
+                    <td>Shinde</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Rohan</td>
+                    <td>Shinde</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Thank You</h4>
+    </div>
+</body>
+<script>
+    let target = document.querySelector('.container');
+    console.log(target);
+ 
+    console.log(target.childNodes)  // ye sara dekhayega test, heading, coments all dekhayega
+
+    console.log(target.firstChild)  // pahila child milega jo ki child node mei se 1 wala hoga wo
+
+    console.log(target.children)  // only elemt ko manega tags ko
+
+    console.log(target.firstElementChild)  // pahila wala tag milega 
+
+    console.log(target.lastElementChild)  // last wala tag milega 
+
+    console.log(target.children[0])  // pahila wala tag milega
+
+    console.log(target.children[0].nodeName)  // pahile wale children ka nodeName show kr dega
+
+    console.log(target.childElementCount)  // kitne child node hai wo batayega
+
+    console.log(target.children[0].nodeType)
+    /*List of NodeType:
+    1) element: 1
+    2) Atributes: 2
+    3) Text: 3
+    4) Comment: 8
+    5) Document: 9
+    6) Dic Type: 10
+    */
+
+// children ke childrens 
+    console.log(target.children[1].children)  // pahile tag ke andar ke children milege
+
+    console.log(target.children[1].children[1].children)  // uske bhi children milege
+
+    console.log(target.nextSibling)  // next wale milega childnode
+
+    console.log(target.nextElementSibling)  // next wale milega children
+
+    console.log(target.nextElementSibling. nextElementSibling)  // uske bhi nest wale sibling milege
+    
+    
+</script>
+</html>

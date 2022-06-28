@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables: Let Const & Var</title>
+</head>
+<body>
+    <h2>Topic: Variables: Let Const & Var</h2>
+    <h4>Open console for show output of code</h4>
+</body>
+<script>
+    // Var: 
+    var name = 'Shubham';
+    console.log(name);
+
+    var sername;
+    sername = 'Shinde';
+    console.log(sername);
+
+    /* Rules for creating Variable: 
+    1) Cannot starts with number.
+    2) Can starts with Number, Latters, _ , $.
+    3) Are case sensitive.
+    */
+
+
+    //Const 
+    const midname = 'Ashok';
+    // midname = 'midname';  // const ke bad kiya gaya koyi bhi name fir se use nahi kay sakte.
+    console.log(midname);
+    
+
+    // let 
+    let city = 'Satara';
+    {
+        let city = 'Koregaon';
+        console.log(city);  // Let Blog level hota hai {} ke andar hoga to usko run karega 
+    }
+    console.log(city)  // Baher hoga to bher wale ko kr dega.
+
+
+    /*Most Comman Programing Case type : 
+    1) camaCase
+    2) kabab-case
+    3) snack_case 
+    4) PascalCase
+    */
+    
+</script>
+</html>

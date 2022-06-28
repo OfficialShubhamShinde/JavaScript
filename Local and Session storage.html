@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local & Session storage</title>
+</head>
+<body>
+    <h2>Topic: Local & Session storage</h2>
+    <h3>Open Console for showing output of code</h3>
+</body>
+<script>
+/* Local Storage: 
+ 1) Local Storage browser me console option ke linke me applications me hote hai */
+
+    localStorage.setItem('Name', 'Shubham');  // statement for adding items in local storage
+    localStorage.setItem('Name2', 'Rohan');  // statement for adding items in local storage
+
+    console.log(localStorage.getItem('Name'));   // target and show value of key
+
+    console.log(localStorage.Name)  // Another way
+
+    console.log(window.localStorage);   // pura local storage milega
+
+    // localStorage.clear()  // local storage delet krne ke liye
+
+    // localStorage.removeItem('Name')  // Remove an perticular key-value
+
+
+
+// Adding Array in localStorage and retrive in array not a string:
+    let arr = ['mango', 'apple', 'orange', 'banana', 'grapes'];
+    localStorage.setItem('fruits', JSON.stringify(arr));
+    console.log(JSON.parse(localStorage.getItem('fruits')));
+
+
+/* Session Storage:
+1) Same functions of localStorage
+2) Browser close kiya ki ye delet ho jayegi */
+    sessionStorage.setItem('yourName', 'Sakshi');  // adding
+    sessionStorage.setItem('yourName2', 'Ashok');
+
+    let retrive = sessionStorage.getItem('yourName')  // retive
+    console.log(retrive);
+
+    // sessionStorage.clear();  clraeing
+
+    // sessionStorage.removeItem('yourName');  // for removing
+</script>
+</html>

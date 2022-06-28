@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shorthand Character Classes (Regular Expression)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h2>Shorthand Character Classes (Regular Expression)</h2>
+        </center>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    // 1) /\wxyz/  -  word character - _ or alphabet or numbers
+let reg1 = /\war/  //  means \w ke bad ka string mai hona chaiye age kuch bhi chalega (_,alphabet,number)
+let str1 = 'shubham8_ar';  // match  (only one word character)
+let str2 = '&*shubham8_ar';  //  does not match 
+if (reg1.exec(str1)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+
+    // 2) /\w+xyz/  -  more word character
+let reg3 = /\w+ar/  //  means \w ke bad ka string mai hona chaiye age kuch bhi chalega (_,alphabet,number)
+let str3 = 'shubham8_ar';  // match
+if (reg3.exec(str3)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+
+    // 3)/W/ -  non word character
+let reg4 = /\War/;  //  capital W use for show non number
+let str4 = ' ar';  // Space non word character hai
+if (reg4.exec(str4)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+
+    // 3)/W+/ -  More than non word character5let reg5 = /\W+ar/;  //  capital W use for show non number
+let reg5 = /\W+ar/;  //  capital W use for show non number
+let str5 = '$%^&&^%$$ar';  // ye sare non word character hai
+if (reg5.exec(str5)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+
+    // 4) /\d999/  degit match
+let reg6 = /\d999/;  //  \d for digit matching
+let reg7 = /\d+999/;  //  more degit
+let str6 = '999999999'; 
+if (reg6.exec(str6)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+
+    // 5) /\D/  -  non degit
+let reg8 = /\D999/;  //  \D for non digit matching
+let reg9 = /\D+999/;  //  more than non degit
+let str8 = 'Shubham999'; 
+if (reg8.exec(str8)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+
+    // 6)  /\s/  -  white space
+let reg10 = /\ska number/;  //  \s for space 
+let reg11 = /\s+ka number/;  //  more for space 
+let str10 = ' ka number'; //  ka ke pahle space hai to true
+if (reg10.exec(str10)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+
+    // 7) /\S/  -  non white space
+let reg12 = /\Ska number/;  //  \S for non whitespace 
+let reg13 = /\S+ka number/;  //  more than
+let str12 = 'xka number'; //  k ke pahile character hi chaiye
+if (reg12.exec(str12)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+
+    // 8) /\b/  -  Word Boundry 
+let reg14 = /m\b/;  //  \b for word boundary
+let str14 = 'shubham shinde'; //  m ke bad space hai end hai to wo word boundary
+if (reg14.exec(str14)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+
+    // 9) /(s?=h)/  -  Assertions 
+let reg15 = /s(?=h)/;  //  (?=) for assertion
+let str15 = 'shubham'; //  s ke bad h hai to match
+if (reg15.exec(str15)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+
+    // 9) /(s?!=h)/  -  Not Assertions 
+let reg16 = /s(?!)h/;  //  (?1) for not assertion
+let str16 = 'shubham'; //  s ke bad h nahi hona chaiye 
+if (reg16.exec(str16)) {
+    console.log("Match the string");
+} else {
+    console.log("Does not Match the string");
+}
+</script>
+
+</html>

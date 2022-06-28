@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+    crossorigin="anonymous"
+  />
+    <title>Creating Removing Replacing Element</title>
+</head>
+<body>
+    <h1>Topic: Creating Removing Replacing Element</h1>
+    <h2>Open Console for Output of code</h2>
+<div class="container">
+    <h3 class="classname"></h3>
+    <h5 class="classname2"></h5>
+    <h4 class="classname3"></h4>
+    <h2 id="quiz"></h2>
+</div>
+<ul id="ul">
+    <li id="li1">Shubham</li>
+    <li id="li2">Rohan</li>
+
+</ul>
+</body>
+<script>
+// creating: 
+    let elemet = document.createElement('h1')
+    console.log(elemet)
+
+    // add a class name on it 
+    elemet.className = 'heading'  // add class name 
+    
+    // add id on it 
+    elemet.id = 'id'  // add id name 
+
+    // Adding more attribute
+    elemet.setAttribute('name', 'name')  // adding name attribute on it
+    elemet.setAttribute('title', 'title')  // adding title attribute on it
+
+    // adding/fit/append in DOM
+    elemet.innerText = 'I am heading'
+    // let textCreat = document.createTextNode('I am creat Text Node')    // inner text ki jaga hum creatTextNode bhi kr sakte hai
+    let heading = document.querySelector('h3.classname')
+    console.log(heading)  // check targeted or not
+    heading.appendChild(elemet);
+
+    // anotherway (easy)
+    let add2 = document.querySelector('.classname2')
+    console.log(add2) // check targeted or not
+    let text = '<b>I am another heading</b>';
+    add2.innerHTML = text;
+    add2.setAttribute('id', 'id')
+
+
+
+// Replaicing:
+    let add3 = document.querySelector('.classname3')
+    console.log(add3) // check targeted or not
+    add3.setAttribute('id', 'id')
+    let text2 = '<b>I am another heading but replacing with JS</b>';
+    add3.innerHTML = text2;
+
+    add2.replaceWith(add3)  // replacing add2 with add3
+
+    let target1 = document.getElementById('ul')  // target perticulat id, class our niche uske child ko replace karo
+    target1.replaceChild(document.getElementById('li2'), document.getElementById('li1'))  // for replacing child (right)
+
+
+
+    
+    
+// Removing 
+let remove2 = document.createElement('p')
+remove2.setAttribute('id' ,'remove')
+let removeText = document.createTextNode('I am removing text')
+remove2.appendChild(removeText)
+
+// let target2 = document.getElementById('ul')
+// target2.removeChild(document.getElementById('li1'))  // child delet krne ke liye
+
+
+
+// Additional:
+let get = add3.getAttribute('class')  // jiska attribute chiaye means id class wagera kuch bhi chaiye to ye sentence
+console.log(get)
+
+let has = add3.hasAttribute('class') // jiska attribute hai ya nahi jo diya hai wo true false me batata hai
+console.log(has)
+
+let remove = add3.removeAttribute('id') // id, class wagera  remove krna ho to sentence
+console.log(remove)
+
+</script>
+</html>

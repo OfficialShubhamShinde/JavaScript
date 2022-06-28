@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays </title>
+</head>
+<body>
+    <h2>Topic: Arrays</h2>
+    <h3>Open console for show output of code</h3>
+</body>
+<script>
+    const marks = [20, 19, 15, 17];
+    console.log(marks[1])
+
+    const fruits = ['mango', 'apple', 'banana'];
+    console.log(fruits)
+
+    const arr = new Array(1,2,3,4,5);
+    console.log(arr)  // is also way for creat array.
+
+    console.log(arr.length)  // for identifying length of array
+
+    console.log(Array.isArray(arr));  // array hai ya nahi ye bata ta hai.
+
+    arr[0] = 0;  // 0 add kr sakte array me index kise r[]
+    console.log(arr);
+    
+    console.log(arr.indexOf(3))  // 3 index pr kay hai wo show kr dega
+
+    // mutating/ modifying array
+    console.log(arr.push(7))  //  End me add kr ne ke liye array me
+    console.log(arr);
+
+    console.log(arr.unshift(20))  //  Start me add kr ne ke liye array me
+    console.log(arr);
+
+    console.log(arr.pop(7))  //  end me delet kr ne ke liye array me
+    console.log(arr);
+    
+    console.log(arr.shift(20))  //  Start me delet kr ne ke liye array me
+    console.log(arr);
+
+    console.log(arr.slice(1,3))  // 1 se shuru kr ke uske bad ke 3 number delet kre.
+
+    console.log(arr.reverse())  //  end me add kr ne ke liye array me
+
+    console.log(arr.concat(fruits))  // array me array add kr ne ke liye
+   
+</script>
+</html>

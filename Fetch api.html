@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fetch api</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<style>
+    .content {
+        border: 3px solid black;
+        padding: 200px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <center>
+            <h2>Fetch api</h2>
+        </center> <br>
+        <div class="content">
+
+        </div>
+        <br>
+        <center><button class="btn btn-primary" id="fetchData">fetchData from txt File</button>
+            <button class="btn btn-primary" id="fetchData2">fetchData from API</button>
+        </center> <br>
+        <center><button class="btn btn-primary" id="postData">Post Request</button></center>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    // From txt File: 
+    let fetchData = document.getElementById("fetchData");
+    fetchData.addEventListener('click', function getData() {
+        let url = 'try.txt';  //  location kaha se data lana hai
+        fetch(url).then(function (responce) {  // fetch ek promise leta hai or fetch setTime out ki tara use hota hai
+            return responce.text();  // iska then niche 
+        }).then(function (data) {  //  dusra wala then
+            console.log(data);  //  console mai data ayega
+        });
+    })
+
+    // from API:
+    let fetchData2 = document.getElementById("fetchData2");
+    fetchData2.addEventListener('click', function getData2() {
+        url = 'https://api.github.com/users';  //  api link
+        fetch(url).then(function (responce) {
+            return responce.json();  //  json data use kr raha hai is liye json array me data milega
+        }).then(function (data) {
+            console.log(data);
+        });
+    });
+
+    // Post Request:
+    let postData = document.getElementById('postData');
+    postData.addEventListener('click', function () {
+        url = 'http://dummy.restapiexample.com/api/v1/create';  //  api link
+        data = '{"name":"shubham123453129048","salary":"123","age":"23"}'  // kay lena hai us site sai
+        params = {
+            method: 'post',  //  request post hai
+            Headers: {
+                'content-Type': 'application/json'
+            },
+            body: data  //  data string hai to JSON.stringify use karo wrna mat karo.
+        }
+        fetch(url, params).then(function (responce) {
+            responce.json()  // json parse kr dega
+        }).then(function (data) {
+            console.log(data);  //  data console mai ayega
+        }
+        );
+    })
+</script>
+
+</html>

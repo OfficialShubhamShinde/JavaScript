@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Error Handling & Try Catch</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <center><h2>Error Handling & Try Catch</h2></center>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+</body>
+
+<script>
+    // Throw Error: 
+    /* let error = false;
+    if (!error) {
+        throw new Error("Is an error");   //  error show krne ka sentence
+    }
+    else{
+        console.log('Is not an error');
+    }
+    */
+
+    // Handle Error:
+    try {
+        gjsfhsfsdj  //  dummy text
+        func1();  //  dummy function
+    } catch (error) {
+        // Types of shhowing error: 
+        console.log('It is not a function in your page');
+        console.error('It is not a function in your page');
+        console.log(error.message);  //  error + massage show hoga
+        console.log(error)
+
+    }
+    finally{
+        console.log('Finally we will run it');  // kuch bhi ho ye run hoga hi
+    }
+</script>
+
+</html>

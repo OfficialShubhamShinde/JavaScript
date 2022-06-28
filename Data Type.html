@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types</title>
+</head>
+<body>
+    <h2>Topic: Data Types in JS</h2>
+    <h4>Open console for show code output</h4>
+</body>
+<script>
+    /*Types of Data Type:
+       1) Primitive Data Type - String, Number, Boolean, Null, Undefined, Symbol.
+       2) Reference Data Type - Arrays, Object Literals , Funcation, Dates.
+    */
+
+// Primitive Data Type:
+
+// String:
+let name = 'Shubham';  // String '' ya "" me likhte hai
+console.log('My name is ' + name);
+console.log('Data Type is ' + (typeof name))
+
+// Number
+let bdate = 20;  // numbers write in single not in '' or "".
+console.log('Number is ' + bdate);
+console.log('Data Type is ' + (typeof bdate));
+
+// Boolean 
+let isDriver = true;  // boolean shows true falsevalues
+console.log('Boolean is ' + isDriver);
+console.log('Data Type is ' + (typeof isDriver));
+
+// Null  
+let married = null;  // Null show kr dega
+console.log('Status is ' + married);
+console.log('Data Type is ' +typeof(married));
+
+// undefined
+let undef = undefined;  // let ya var ko kuch define nahi kiya hoga to undefine output ayega
+console.log('Status is ' + undef);
+console.log('Data Type is ' + typeof(undef));
+
+
+// Reference Data Type
+
+// Array
+arr = [1,2,3,4,5];
+console.log(arr);
+console.log('Data Type is ' + typeof(arr));
+
+// Object Literals
+let marks = {
+    shubham : 98,
+    Rohan : 97,
+    Sakshi : 99
+}
+console.log(marks);
+console.log('Data Type is ' + typeof(marks));
+
+// Fuctions
+function func(name, sername) {
+
+}
+console.log('Data Type is ' + typeof(func));
+
+// Date 
+let date = new Date;
+console.log('Data Type is ' + typeof(date))
+
+</script>
+</html>

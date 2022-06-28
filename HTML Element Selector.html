@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+    crossorigin="anonymous"
+  />
+    <title>HTML Element Selector</title>
+</head>
+<body>
+    <h2>HTML Element Selector</h2>
+    <h2>Open Console for Output of code</h2>
+    <div class="container">
+        <h1 id="heading" class="myClass">I am heading</h1>
+        <p id="para1"></p>
+        <div class="anothercontainerclass">
+            <div class="youClass">Your Class Number 1</div>
+            <div class="youClass">Your Class Number 2</div>
+            <div class="youClass">Your Class Number 3</div>
+            <div class="youClass">Your Class Number 4</div>
+        </div>
+        </div>
+    </body4>
+<script>
+    /* Types of element selectors:
+    1) Single element selector.
+    2) Multiple element selector.
+    */
+
+//1) Single element selector.
+    let element = document.getElementById('heading');
+    console.log(element)
+
+    console.log(element.className)  // class name show hoga
+
+    console.log(element.childNodes)  // andar ka text
+    
+    console.log(element.parentNode)  // kiske andar tha wo show kr dega
+    
+    element.style.backgroundColor = 'red';  // css se change kr sakte hai.
+
+    document.getElementById('para1').innerText = 'I am para 1'  // only text add krta hai
+
+    document.getElementById('para1').innerHTML = `<b>I am para 1 with bold</b>`  // styling kr sakte hai html ki
+
+    // Query Selector:
+    console.log( document.querySelector('#heading')) // #id, .class, tags ko target kr sakte hai. (pahila wala div target karega 2 same names hoge class ke to.)
+    console.log( document.querySelector('.container'))  // #id, .class, tags ko target kr sakte hai. 
+    console.log( document.querySelector('p'))  // #id, .class, tags ko target kr sakte hai. 
+
+
+// 2) Multiple element selector.
+    let x = document.getElementsByClassName('container');  // '' us class ko target karega
+    console.log(x)
+ 
+    console.log(x[0].getElementsByClassName('myClass'));   // pahila wala class milega
+    
+    console.log(document.getElementsByTagName('div'));  // div nam ke sare tag milege
+
+
+    // Beast way to change any property of perticular tag with the help of array.from()
+    let elem =document.getElementsByClassName('anothercontainerclass');
+    Array.from(elem).forEach(element => {
+        element.style.backgroundColor = 'green';
+    });
+</script>
+</html>

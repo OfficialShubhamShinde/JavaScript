@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events & Event Object</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h2>Events & Event Object</h2>
+    <h2>Open Console for Showing Output of code</h2>
+    <hr />
+    <div class="container">
+      <button type="button" id="btn" class="btn btn-primary">Button</button>
+      <br />
+      <br />
+      <button type="button" id="btn2" class="btn btn-primary">
+        What about when clicked
+      </button>
+      <br />
+      <br />
+      <button type="button" id="btn3" class="btn btn-primary">Mouseover</button>
+      <br />
+      <br />
+      <button type="button" id="btn4" class="btn btn-primary">Double Click</button>
+      <br />
+      <br />
+      <button type="button" id="btn5" class="btn btn-primary">Mouse Down</button>
+      <br />
+      <br />
+      <button type="button" id="btn6" class="btn btn-primary">Mouse Entered</button>
+      <br />
+      <br />
+      <button type="button" id="btn7" class="btn btn-primary">Mouse leave</button>
+      <br />
+      <br />
+      <button type="button" id="btn8" class="btn btn-primary">Mouse Move</button>
+      <br />
+      <br />
+    </div>
+  </body>
+  <script>
+// Click Event:
+    document.getElementById("btn").addEventListener("click", function () {
+      // id ko grap kr ke uspe add event listner laga ke jo wr krna chate ho wo kr sakte hai
+      console.log("U r clicked on button"); //  console me dekhega
+      // location.href = 'http://www.google.com'  // click kroge to jo link de hogi us pr redirect hoga
+    });
+
+    document.getElementById("btn2").addEventListener("click", function (e) {
+      // id ko grap kr ke uspe add event listner laga ke jo wr krna chate ho wo kr sakte hai
+      console.log(e); //  all about data us click ka
+      console.log("Kaha Click kiya hai: " + e.target); // kaha click kiya
+      console.log("Class name on where u clicked: " + e.target.className); //  // iski class kay hai show kr dega
+      console.log(e.offsetX); // us perticular tag me kaha click kr rahe ho uski value dega X axis me.
+      console.log(e.offsetY); // us perticular tag me kaha click kr rahe ho uski value dega Y axis me.
+      console.log(e.clientX); // Browser Window se kitne dur click kiya wo show kr dega X axis me.
+      console.log(e.clientY); // Browser Window se kitne dur click kiya wo show kr dega Y axis me.
+    });
+
+
+// DoubleClick
+    document.getElementById('btn4').addEventListener('dblclick', function func4 (e) {
+        console.log('U double clicked on button')
+    })
+
+
+// Mouseover Event:
+    document
+      .getElementById("btn3")
+      .addEventListener("mouseover", function func3(e) {
+        console.log("Mouse Entered"); // when your curser goes on button then is query fired
+      });
+
+
+// Mouse Down Event: 
+      document.getElementById("btn5").addEventListener('mousedown', function (e) {
+          console.log("mouse downed")  // mouse pe se konsa bhi button dabawoge to ye output melega
+      })
+
+
+// Mouse Enter: 
+document.getElementById('btn6').addEventListener('mouseenter', function (e) {
+    console.log("mouse entered") // Us tag se mouse tuch huwa to (same for mouseover)
+})
+
+
+// Mouse Leave: 
+document.getElementById('btn7').addEventListener('mouseleave', function (e) {
+    console.log("mouse leave") // Us tag se mouse bher aya to 
+})
+
+
+// Mouse Move:
+document.querySelector('.container').addEventListener('mousemove', function (e) {
+    console.log(e.offsetX)  // X axis me kaha mouse liya
+    document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetX}, 101 )`   // color change ho jayege mouse jaise leke jawo ge waise
+    console.log("mouse Moved") // Jitne bar mouse hilawoge wo utne bar show krta hai
+})
+
+  </script>
+</html>

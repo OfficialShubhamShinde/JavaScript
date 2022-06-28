@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sets in JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h2>Sets in JS</h2>
+        </center>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+// Create/initialize Set: 
+const mySet = new Set(); 
+console.log('Empty set', mySet); 
+
+// Adding values in Set:
+mySet.add('this') 
+mySet.add('this')  //  set me ek value ek hi bara yige 2 bar add nahi kr sakte
+mySet.add('myName');
+mySet.add(202020);
+mySet.add(true);
+console.log(mySet);
+
+// Another way to add Set: 
+let mySet2 = new Set([1, 45, 'Shubham', {a:'20', b:'28'}])
+console.log('Empty Set 2: ', mySet2);
+
+// Finding size of Set:
+console.log(mySet.size);  //  kitne elements hai show hoga
+
+// is in array 
+console.log(mySet.has(202020));  // hoga to true wrna false 
+
+// deleting values: 
+mySet.delete('myName')  //  removing elements in set
+console.log('After Deleting: ', mySet)
+
+// Itreating a set: 
+// with for loop:
+for(let item of mySet) {
+    console.log('Items is', item)
+}
+
+// with for each loop:
+mySet2.forEach((item)=>{
+    console.log('Item is in forEach Loop', item);
+})
+
+// In Array 
+console.log(Array.from(mySet))  
+</script>
+
+</html>

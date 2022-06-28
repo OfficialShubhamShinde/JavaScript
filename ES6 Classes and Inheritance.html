@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Classes and Inheritance</title>
+</head>
+
+<body>
+    <h2>ES6 Classes and Inheritance</h2>
+    <h3>Open console for show output of code</h3>
+</body>
+
+<script>
+/*  1)  Prototype ki jaga hum ES6 ki classes use kr sakte hai
+    2)  Prototype bahot compicated hai is liye ye use kre
+    changes in prototype to classes:
+        a)  sidha slogen(){} likh ke start kr sakte hai na ki slogen:function(){} kr ke likhe our fir usko add krte rahe prototype mai
+        b)  Prototype sirf constructor pe work krta hai yaha sidha class creat kr ke usme constructor add kre
+        c)  
+*/
+class Employee {   //  create class 
+    constructor(givenName, givenSername, givenRollNo){  //  adding constructor
+        this.name = givenName;
+        this.sername = givenSername;
+        this.rollNo = givenRollNo;
+    }
+    slogen(){
+        return `I am ${this.name} & I am the best`;  // adding function in class
+    }
+    rollNoFromEnd(){
+        return 150 - this.rollNo;;
+    }
+    static add(a, b){  // static method ka matlab bina class bana ke is function ko likhe. (jiska kuch sambhand nahi hai us class mai fir bhi kich bhi value la ke)
+        return a + b; 
+    } 
+} 
+let shubham = new Employee('Shubham', 'shinde', 140);
+console.log(shubham)
+console.log(shubham.slogen());
+console.log(shubham.rollNoFromEnd());
+console.log(Employee.add(20, 28));  //  original wala class name le
+
+
+// create inheritance: 
+class programer extends Employee{  // extend senetence 
+    constructor(givenName, givenSername, givenRollNo, givenLanguage){
+        super(givenName, givenSername, givenRollNo);
+        this.language = givenLanguage;
+    }
+    fevLanguage(){
+        if (this.language == 'python') {
+            return "python";
+        }
+        else{
+            return 'JavaScript';
+        }
+    }
+    static multiplay(a, b){   //  static method same as 
+        return a*b
+    }
+}
+let rohan = new programer('rohan', 'shinde', '141', 'jb');
+console.log(rohan)
+console.log(rohan.fevLanguage('go'));
+console.log(programer.multiplay(2, 3));
+</script>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>understanding DOM and Creating Website Layouts</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h2>understanding DOM and Creating Website Layouts</h2>
+    <h3>Open console for show output of code</h3>
+    <div class="container">
+      <div class="child" id="">child 1</div>
+      <div class="child" id="">child 2</div>
+      <div class="child" id="">child 3</div>
+      <div class="child" id="">child 4</div>
+
+      <form action="understanding DOM and Creating Website Layouts.html">
+          <input type="text" name="" id="">
+          <button>Submit</button>
+      </form>
+      <a href="http://www.facebook.com">facebook.com</a>
+      <img src="https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg" width="100px" height="100px" alt="">
+    </div>
+  </body>
+  <script>
+    // Document:
+    let d = document;  // pura page ka code show hoga
+    console.log(d)
+
+    console.log(document.all);  //  sare tag milege
+    
+    console.log(document.body);  //  body tag melega.
+    
+    console.log(document.body);  //  body tag melega.
+
+    console.log(document.forms); // form ka tag milega
+    
+    console.log(document.forms[0]); // form ka tag milega. [] iske andar kitne number ka chaiye wo form milega.
+    
+    console.log(document.links); // Links milege page paise
+    
+    console.log(document.images); // image milege page paise
+
+
+    // foreach loop in document 
+    Array.from(d).forEach(function(element) {
+        console.log(element)
+    });
+
+  </script>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Regular Expressions - Metacharacters in JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <div class="container mt-3">
+        <center>
+            <h2>Regular Expressions - Metacharacters in JavaScript</h2>
+        </center>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    // Simple regular expression Program:
+    let reg = /shubham/;
+    let str = 'shubham is good boy';
+    let result = reg.exec(str);
+    console.log(result);
+
+    if (reg.exec(str)) {
+        console.log(`The string: ${str} is matches the expression ${reg.source}`);
+    } else {
+        console.log(`The string: ${str} is does not match the expression ${reg.source}`);
+    }
+
+    // Meta Characters Symbols:
+    // 1) /^/  --> Starts with
+    let reg2 = /^s/;
+    let str2 = 'shubham';
+    if (reg2.exec(str2)) {
+        console.log(`Match the string`)
+    }
+    else {
+        console.log(`Does not Match the string`);
+    }
+
+    // 2) /m$/  --> ends with
+    let reg3 = /m$/;
+    let str3 = 'shubham';
+    if (reg3.exec(str3)) {
+        console.log(`Match the string`)
+    } else {
+        console.log(`Does not Match the string`);
+    }
+
+    // 3) /sh.bham/  --> . means matches any one character 
+    let reg4 = /sh.bham/;  
+    let str4 = 'shubham';  //  dot ke jaga konsa bhi character likhoge to wo match hai
+    if (reg4.exec(str4)) {
+        console.log(`Match the string`)
+    }
+    else{
+        console.log(`Does not Match the string`);
+    }
+
+    // 4) /sh*am/  --> * means Matches 0 or more characters
+    let reg5 = /shubham*/; 
+    let str5 = 'shubhamasdfghjklfdg'; // * means kuch bhi kitne bhi character
+    if (reg5.exec(str5)) {
+        console.log(`Match the string`)
+    } else {
+        console.log(`Does not Match the string`);
+    }
+
+    // 5) /sh?ubh?m/  -->  ? means Optional Character (ho bhi sakta hai nahi bhi sakta)
+    let reg6 = /sh?ubha?m/;  //  jiske piche ? hai wo optional hoga
+    let str6 = 'subhm';  //  wo word yaha nahi hoga to bhi chalega
+    if (reg6.exec(str6)) {
+        console.log(`Match the string`)
+    } else {
+        console.log(`Does not Match the string`);
+    }
+
+    // 6) /*\/  --->  skip character
+    let reg7 = /shu\*bham/;  //  * character ko match krna chate ho to backtick laga ke likho
+    let str7 = 'shu*bham';  //  
+    if (reg7.exec(str7)) {
+        console.log(`Match the string`)
+    } else {
+        console.log(`Does not Match the string`);
+    }
+</script>
+
+</html>

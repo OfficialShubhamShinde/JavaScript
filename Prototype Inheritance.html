@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Inheritance</title>
+</head>
+
+<body>
+    <h2>Prototype Inheritance</h2>
+    <h3>Open console for show output of code</h3>
+</body>
+
+<script>
+    const proto = {  //  create object
+        slogen: function () {
+            return 'The comapany is best'
+        },
+        changeName: function (newName) {
+            this.name = newName
+        }
+    }
+    const shubham = Object.create(proto);  //  add in prototype
+    console.log(shubham)
+    shubham.name = 'Shubham';  // adding components in object
+    shubham.sername = 'shinde';
+    shubham.changeName = 'Shubham2'  //  change kr dega name ko
+
+
+
+    // Another way to create prototype: 
+    const proto2 = Object.create(proto, {
+        name: {value: 'Rohan', writable: true},  // writable: true krne se usko change kr sakte hai
+        sername: {value: 'shinde'}  //  value likhna compalsory hai
+    })
+    console.log(proto2)
+    proto2.changeName = ('Rohan2');  //  for changing name
+    console.log(proto2)  
+
+
+    // creating constructor: 
+    function Employee(name, salary, experience) {
+        this.name = name;
+        this.salary = salary;
+        this.experience = experience;
+    }
+    Employee.prototype.slogen = function () {  // adding slogen in this constructor
+        return `This company is the best. Regards ${this.name}`
+    }
+    let shubhamobj = new Employee('Shubham', 50000, 5)
+    console.log(shubhamobj)
+    console.log(shubhamobj.slogen())
+
+    // creating inheritance: 
+    function programer(name, salary, experience, language ) {
+        Employee.call(this, name, salary, experience, language)
+        this.language = language;
+    }
+    // inherite the prototype: 
+    programer.prototype = Object.create(Employee.prototype);  //  adding slogen in uppper employee wale constructor se
+
+    // mnually set inheritance in prototype:
+    programer.prototype.constructor = programer;  //  for adding in prototype option
+
+    let rohaan = new programer('Rohan', 50000, 5, 'JavaScript')
+    console.log(rohaan)
+    console.log(rohaan.slogen())  //  
+
+// Bahot complicated hai is liye hum ES6 ke classes use krte hai
+    
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if else and switches</title>
+  </head>
+  <body>
+    <h2>Topic: if else and switches</h2>
+    <h3>Open console for show output of code</h3>
+  </body>
+  <script>
+        let age = 18;  // string hogi to bhi calculate karega
+        if (age>18) { 
+            console.log('U can vote');
+        }
+        else if(age == 18){
+        console.log('U can also vote')
+        }
+        else {
+            console.log('U can not vote')
+        }
+
+
+        // another way (!=)
+        let YourAge = 18;  // string hogi to bhi calculate karega
+        if (YourAge != 18) { 
+            console.log('U can not vote')
+        }
+        else if(age == 18){
+        console.log('U can also vote')
+        }
+        else {
+            console.log('U can vote')
+        }
+
+
+        // variable exist krta hai ya nahi ye check krne ke liye : 
+        if (typeof(YourAge) == 'undefined') {   
+            console.log('age is not defined')
+        }
+        else{
+            console.log('age is defined')
+        }
+
+
+        // Ternali Operators
+        let bdate = 20;
+        console.log(bdate == 20? 'right': 'Wrong')
+  </script>
+</html>
